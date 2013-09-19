@@ -13,22 +13,21 @@
 	document.addEventListener("backbutton", backKeyDown, true); 
     function onLoad()
     {
-          document.addEventListener("deviceready", onDeviceReady, true);
+		document.addEventListener("deviceready", onDeviceReady, true);
     }
 
     function exitFromApp()
-     {
-        navigator.app.exitApp();
-     }
-
+	{
+		navigator.app.exitApp();
+    }
 
 	function backKeyDown() { 
 		  e.preventDefault();
-
 	}
+	
 	$(document).ready(function(){ 
 		$.ajax({
-				url: domain+'?f=getSH',
+				url: domain+'?f=getSchoolHistory',
 				beforeSend : function() {$.mobile.showPageLoadingMsg("a", "Loading....");},
 				complete   : function() {$.mobile.hidePageLoadingMsg();},
 				dataType: 'jsonp',
