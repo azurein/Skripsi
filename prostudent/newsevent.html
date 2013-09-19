@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<script src="../assets/js/cordova.js"></script>
+	<link rel="stylesheet" href="../assets/css/style.css">
+	<link rel="stylesheet" href="../assets/css/jquery.mobile-1.3.0.min.css" />
+    <script src="../assets/js/jquery.js"></script>
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/jquery.mobile-1.3.0.min.js"></script>
+	<script>
+	document.addEventListener("backbutton", backKeyDown, true); 
+    function onLoad()
+    {
+          document.addEventListener("deviceready", onDeviceReady, true);
+    }
+
+    function exitFromApp()
+     {
+        navigator.app.exitApp();
+     }
+
+
+	function backKeyDown() { 
+		  e.preventDefault();
+
+	}
+	$(document).ready(function(){ 
+		/*$.ajax({
+				url: domain+'?f=getSchoolLvl',
+				beforeSend : function() {$.mobile.showPageLoadingMsg("a", "Loading....");},
+				complete   : function() {$.mobile.hidePageLoadingMsg();},
+				dataType: 'jsonp',
+				jsonp: 'jsoncallback',
+				//$("#test").append("<select name='select-choice-a' id='select-choice-a' data-native-menu='false' data-mini='true' tabindex='-1'><option value='standard'>-- School Level --</option>");
+				success: function(data, status){
+				  
+					$.each(data, function(i,item){
+						//$("#test").append("<option>"+item.idlevelsekolah+", "+item.namalevelsekolah+"</option>");
+								  $(".alist").append("<li data-corners='false' data-shadow='false' data-iconshadow='true' data-wrapperels='div' data-icon='arrow-r' data-iconpos='right' data-theme='c' class='ui-btn ui-btn-icon-right ui-li-has-arrow ui-li ui-li-has-thumb ui-btn-up-c'><div class='ui-btn-inner ui-li'><div class='ui-btn-text'><a href='#' class='ui-link-inherit'><img class='ui-li-thumb' src='../img/kombo/kombo (5).jpg'><h3 class='ui-li-heading'>"+item.idlevelsekolah+"</h3><p class='ui-li-desc'>"+item.namalevelsekolah+"</p></a></div><span class='ui-icon ui-icon-arrow-r ui-icon-shadow'>&nbsp;</span></div></li>");
+								
+					});
+				},
+					error: function(){
+					alert('Error Occur');
+				}
+				//$("#test").append("</select>");
+		  });			*/
+	});
+	</script>
+	</head>
+	<body onLoad="onLoad();">
+<div data-role="page">
+	<div data-role="popup" id="popupPanel" data-corners="false" data-theme="none" data-shadow="false" data-tolerance="0,0">
+		<a href="#" data-theme="a" data-icon="star" data-mini="true" data-role="button">Favorites</a>
+		<a href="#" data-theme="a" data-icon="gear" data-mini="true" data-role="button">Settings</a>
+		<a href="#" data-theme="a" data-icon="back" data-mini="true" data-role="button">Sign Out</a>
+	</div>
+	<div data-role="header" data-theme="d" data-position="fixed" data-id="footer">
+	<a href="#" data-role="button" data-icon="delete" data-iconpos="notext" onClick="exitFromApp()">Exit</a> 
+	<h1>News and Event</h1>
+	<a href="#popupPanel" data-rel="popup" data-transition="slide" data-position-to="window" data-role="button" data-icon="grid" data-iconpos="notext">Options</a>
+	<!--<input type="search" name="search" id="search-paket" value="" data-id="footer" />-->
+	</div>
+	<div data-role="content" id="combo" class="tab-content first">
+		<ul data-role="listview" data-split-icon="star" data-split-theme="d" class="alist">
+			
+		</ul>
+	</div>
+	<div data-role="content" id="favorite" class="tab-content first">
+		
+        <div id="wrapper">
+        	
+            
+        </div>
+	</div>
+
+</div>
+	 </body>
+</html>

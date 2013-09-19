@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<script src="assets/js/cordova.js"></script>
+	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="assets/css/jquery.mobile-1.3.0.min.css" />
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/jquery.mobile-1.3.0.min.js"></script>
+	<script>
+	document.addEventListener("backbutton", backKeyDown, true); 
+    function onLoad()
+    {
+          document.addEventListener("deviceready", onDeviceReady, true);
+    }
+
+    function exitFromApp()
+     {
+        navigator.app.exitApp();
+     }
+
+
+	function backKeyDown() { 
+		  e.preventDefault();
+
+	}
+	function onDeviceReady(){ 
+		//alert("udah bisa");
+		$.ajax({
+				url: 'http://10.21.43.253/methodphonegap.php?f=getAkses',
+				beforeSend : function() {$.mobile.showPageLoadingMsg("a", "Loading....");},
+				complete   : function() {$.mobile.hidePageLoadingMsg();},
+				dataType: 'jsonp',
+				jsonp: 'jsoncallback',
+				success: function(data, status){
+					$.each(data, function(i,item){
+						$("#wrapper").append(item.hasil);
+					});
+				},
+					error: function(){
+					alert('Error Occur');
+				}
+		  });			
+	};
+	</script>
+	</head>
+	<body onLoad="onLoad();">
+<div data-role="page">
+	<div data-role="popup" id="popupPanel" data-corners="false" data-theme="none" data-shadow="false" data-tolerance="0,0">
+		<a href="#" data-theme="a" data-icon="star" data-mini="true" data-role="button">Favorites</a>
+		<a href="#" data-theme="a" data-icon="gear" data-mini="true" data-role="button">Settings</a>
+		<a href="#" data-theme="a" data-icon="back" data-mini="true" data-role="button">Sign Out</a>
+	</div>
+	<div data-role="header" data-theme="d" data-position="fixed" data-id="footer">
+	<a href="#" data-role="button" data-icon="delete" data-iconpos="notext" onClick="exitFromApp()">Exit</a> 
+	<h1>School History</h1>
+	<a href="#popupPanel" data-rel="popup" data-transition="slide" data-position-to="window" data-role="button" data-icon="grid" data-iconpos="notext">Options</a>
+	<!--<input type="search" name="search" id="search-paket" value="" data-id="footer" />-->
+	</div>
+	<div data-role="content" id="combo" class="tab-content first">
+		<ul data-role="listview" data-split-icon="star" data-split-theme="d" class="alist">
+			
+		</ul>
+	</div>
+	<div data-role="content" id="favorite" class="tab-content first">
+		
+        <div id="wrapper">
+        	
+            
+        </div>
+	</div>
+
+</div>
+	 </body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+	<title>Welcome</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<script src="assets/js/cordova.js"></script>
+	<link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/demo.css">
+	<link rel="stylesheet" href="assets/css/jquery.mobile-1.3.0.min.css" />
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/jquery.mobile-1.3.0.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/css/styleLogin.css" />
+<script>
+document.addEventListener("backbutton", backKeyDown, true); 
+	function backKeyDown() { e.preventDefault();}
+    function exitFromApp(){navigator.app.exitApp();}
+	function init() {
+		 document.addEventListener("deviceready", deviceReady, true);
+		 delete init;
+	}
+	
+	function tes(){
+		u5312 = document.getElementById("username").value;
+		p45s = document.getElementById("password").value;
+		$.ajax({
+			url: domain+'?f=getAkses', //&id=1332440001&id='+u5312+'&pass='+p45s
+			data : { id : u5312, pass : p45s}, //id was defined in js/config.js
+			beforeSend : function() {$.mobile.showPageLoadingMsg("a", "Loading....");},
+			complete   : function() {$.mobile.hidePageLoadingMsg();},
+			dataType: 'jsonp',
+			jsonp: 'jsoncallback',
+			success: function(data, status){
+				$.each(data, function(i,item){
+					if(item=="success"){
+						localStorage.setItem('id', u5312);
+						localStorage.setItem('pass', p45s);
+						window.location.href='student.html';
+					}else{
+						alert("Check your username and password!");
+					}
+					
+				});
+			},
+				error: function(){
+				alert('Error Occur');
+			}
+		});	
+	}
+	
+	$(document).ready(function(){
+		
+	});
+		
+		/*function deviceReady() {
+		
+		 $("#loginForm").on("submit",function(e) {
+		    //disable the button so we can't resubmit while we wait
+		    $.mobile.showPageLoadingMsg("a", "Loading....");
+		     $("#submitButton",this).attr("disabled","disabled");
+		 var u = $("#username", this).val();
+		 var p = $("#password", this).val();
+		 if(u != '' && p!= '') {
+		     $.post("http://binus3.babastudio.net/login.php", {username:u,password:p}, function(data,status) {
+		         if(data=="true" && status=="success") {
+		        	 $.mobile.hidePageLoadingMsg();
+		        	 window.localStorage["username"] = u;
+		             window.localStorage["password"] = p;
+		        	 window.location="index.html";
+		         } else {
+		        	 $.mobile.hidePageLoadingMsg();
+		             navigator.notification.alert("Your login failed", function() {});
+		         }
+		         $("#submitButton").removeAttr("disabled");
+		     });
+		}
+		 return false;
+		});
+
+		}*/
+</script>
+</head>
+<body onLoad="init()">
+	<div id="loginPage" data-role="page">
+
+    <div class="codrops-top">
+        <a href="#" data-icon="delete" data-iconpos="notext" onClick="exitFromApp()">Exit</a><div id="header"><strong>School  Solutions  Mobile</strong></div>
+    </div>
+	
+    <header>
+        <h1>School <span> Solutions</span> Mobile</h1>
+        <!--<h1><span>School Information System</span></h1>-->
+    </header>
+    
+    <div data-role="content" id="login">    
+    	<div id="headerLogin">Log In</div>
+        
+            <div data-role="fieldcontain" class="ui-hide-label">
+                <label for="username">Username:</label>
+                <input type="text" name="username" id="username" value="" placeholder="Username" />
+            </div>
+    
+            <div data-role="fieldcontain" class="ui-hide-label">
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password" value="" placeholder="Password" />
+            </div>
+    
+            <input type="button" value="Login" id="submitButton" onClick="tes()">
+       
+        <!--<a href="regis.html" data-ajax="false"><button type="button">Registration</button></a>
+        <a href="student.html" data-ajax="false" style="text-decoration:none;"><button type="button">Go in</button></a>-->
+		    
+    </div>
+
+    <!--<div data-role="footer">
+        <h4><b>&copy; School Solution 2013</b></h4>
+    </div>-->
+
+</div>
+	 </body>
+</html>

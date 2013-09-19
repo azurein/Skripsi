@@ -1,0 +1,125 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+	<title>Welcome</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
+	<script src="assets/js/cordova.js"></script>
+	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="assets/css/jquery.mobile-1.3.0.min.css" />
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/jquery.mobile-1.3.0.min.js"></script>
+	<script>
+	document.addEventListener("backbutton", backKeyDown, true); 
+    function onLoad(){ document.addEventListener("deviceready", onDeviceReady, true); }
+    function exitFromApp(){ navigator.app.exitApp(); }
+	function backKeyDown() { e.preventDefault(); }
+	$(document).ready(function(){
+		alert(localStorage.getItem('id'));
+		/*$.ajax({
+			url: domain+'?f=getStudentProfile', //&id=1332440001
+			data : { id : id}, //id was defined in js/config.js
+			beforeSend : function() {$.mobile.showPageLoadingMsg("a", "Loading....");},
+			complete   : function() {$.mobile.hidePageLoadingMsg();},
+			dataType: 'jsonp',
+			jsonp: 'jsoncallback',
+			success: function(data, status){
+				$.each(data, function(i,item){
+					$(".key").append("<table style='text-align:left;'><tr><td>Tahun Ajaran : </td><td>"+item.tahunakademikmasuk+"-"+item.idsemestermasuk+"</td></tr><tr><td>NIS : </td><td>"+item.nis+"</td></tr><tr><td>Student Name : </td><td>"+item.nama+"</td></tr><tr><td>Place of Birth : </td><td>"+item.tanggallahir.substring(8,10)+"-"+item.tanggallahir.substring(5,7)+"-"+item.tanggallahir.substring(0,4)+"</td></tr><tr><td>Address : </td><td>"+item.alamat+"</td></tr><tr><td>Post Code : </td><td>"+item.kodepos+"</td></tr><tr><td>Telephone : </td><td>"+item.notelepon+"</td></tr><tr><td>Mobile Telephone : </td><td>"+item.nohp+"</td></tr><tr><td>Country : </td><td>"+item.namanegara+"</td></tr><tr><td>Province : </td><td>"+item.namaprovinsi+"</td></tr><tr><td>City : </td><td>"+item.kota+"</td></tr><tr><td>Height : </td><td>"+item.tinggibadan+"</td></tr><tr><td>Weight : </td><td>"+item.beratbadan+"</td></tr><tr><td>Blood Type : </td><td>"+item.golongandarah+"</td></tr><tr><td>Gender : </td><td>"+item.jeniskelamin+"</td></tr><tr><td>Nationality : </td><td>"+item.kewarganegaraan+"</td></tr><tr><td>Religion : </td><td>"+item.agama+"</td></tr><tr><td>Physical Disabilities : </td><td>"+item.kelainanfisik+"</td></tr><tr><td>Description of Physical Disability : </td><td>"+item.keterangankelaian+"</td></tr><tr><td>Email : </td><td>"+item.email+"</td></tr><tr><td>Pin BB : </td><td>"+item.pinbb+"</td></tr><tr><td>Facebook Account : </td><td>"+item.facebook+"</td></tr><tr><td>Twitter Account : </td><td>"+item.twitter+"</td></tr><tr><td>Student Status : </td><td>"+item.namastatus+"</td></tr></table><a href='profileedit.html' data-ajax='false'><input type='button' icon='update' title='Edit'/></a>");
+				});
+			},
+				error: function(){
+				alert('Error Occur');
+			}
+		});	*/
+	});
+	</script>
+	</head>
+	<body onLoad="onLoad();">
+<div data-role="page">
+	<div data-role="popup" id="popupPanel" data-corners="false" data-theme="none" data-shadow="false" data-tolerance="0,0">
+		<!--<a href="#" data-theme="a" data-icon="star" data-mini="true" data-role="button">Favorites</a>-->
+		<a href="#" data-theme="a" data-icon="gear" data-mini="true" data-role="button">Settings</a>
+		<a href="#" data-theme="a" data-icon="back" data-mini="true" data-role="button">Sign Out</a>
+	</div>
+	<div data-role="header" data-theme="d" data-position="fixed" data-id="footer">
+	<a href="#" data-role="button" data-icon="delete" data-iconpos="notext" onClick="exitFromApp()">Exit</a> 
+	<h1>Student</h1>
+	<a href="#popupPanel" data-rel="popup" data-transition="slide" data-position-to="window" data-role="button" data-icon="grid" data-iconpos="notext">Options</a>
+	<input type="search" name="search" id="search-paket" value="" data-id="footer" />	
+	</div>
+	
+	<div data-role="content" id="favorite" class="tab-content first">
+		<ul data-role="listview" data-split-icon="star" data-split-theme="d">
+        	<!--<li>
+                <a href="student/academiccalendar.html" data-ajax="false">
+                    <img class="ui-li-thumb" src="assets/images/guidelines.png">
+                    <h3 class="ui-li-heading">Academic Calendar</h3>
+                    <p class="ui-li-desc">View Academic Calendar</p>
+                </a>
+			</li>-->
+            <li>
+                <a href="student/assignment.html" data-ajax="false">
+                    <!--<img class="ui-li-thumb" src="img/kfc.png">-->
+                    <h3 class="ui-li-heading">Assignment</h3>
+                    <p class="ui-li-desc">View Assignment</p>
+                </a>
+			</li>
+            <li>
+                <a href="student/attendance.html" data-ajax="false">
+                    <!--<img class="ui-li-thumb" src="img/kfc.png">-->
+                    <h3 class="ui-li-heading">Attendance</h3>
+                    <p class="ui-li-desc">View Attendance</p>
+                </a>
+			</li>
+			<li>
+                <a href="student/coursematerial.html" data-ajax="false">
+                    <!--<img class="ui-li-thumb" src="img/kfc.png">-->
+                    <h3 class="ui-li-heading">Course Material</h3>
+                    <p class="ui-li-desc">View Course Material</p>
+                </a>
+			</li>
+            <li>
+                <a href="student/finance.html" data-ajax="false">
+                    <!--<img class="ui-li-thumb" src="img/kfc.png">-->
+                    <h3 class="ui-li-heading">Finance</h3>
+                    <p class="ui-li-desc">Finance Information</p>
+                </a>
+			</li>
+            <li>
+                <a href="student/library.html" data-ajax="false">
+                    <!--<img class="ui-li-thumb" src="img/kfc.png">-->
+                    <h3 class="ui-li-heading">Library</h3>
+                    <p class="ui-li-desc">view Library Info</p>
+                </a>
+			</li>
+            <li>
+                <a href="student/profile.html" data-ajax="false">
+                    <!--<img class="ui-li-thumb" src="img/kfc.png">-->
+                    <h3 class="ui-li-heading">Profile</h3>
+                    <p class="ui-li-desc">View & Edit Profile</p>
+                </a>
+			</li>
+            
+            
+            <li>
+                <a href="student/schedule.html" data-ajax="false">
+                    <!--<img class="ui-li-thumb" src="img/kfc.png">-->
+                    <h3 class="ui-li-heading">Schedule</h3>
+                    <p class="ui-li-desc">View Schedule</p>
+                </a>
+			</li>
+            
+            <li>
+                <a href="student/score.html" data-ajax="false">
+                    <!--<img class="ui-li-thumb" src="img/kfc.png">-->
+                    <h3 class="ui-li-heading">Score</h3>
+                    <p class="ui-li-desc">View Score</p>
+                </a>
+			</li>
+		</ul>
+	</div>
+
+</div>
+	 </body>
+</html>

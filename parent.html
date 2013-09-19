@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
+	<script src="assets/js/cordova.js"></script>
+	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="assets/css/jquery.mobile-1.3.0.min.css" />
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/jquery.mobile-1.3.0.min.js"></script>
+	<script>
+	document.addEventListener("backbutton", backKeyDown, true); 
+    function onLoad()
+    {
+          document.addEventListener("deviceready", onDeviceReady, true);
+    }
+
+    function exitFromApp()
+     {
+        navigator.app.exitApp();
+     }
+
+
+	function backKeyDown() { 
+		  e.preventDefault();
+
+	}
+	
+	</script>
+	</head>
+	<body onLoad="onLoad();">
+<div data-role="page">
+	<div data-role="popup" id="popupPanel" data-corners="false" data-theme="none" data-shadow="false" data-tolerance="0,0">
+		<!--<a href="#" data-theme="a" data-icon="star" data-mini="true" data-role="button">Favorites</a>-->
+		<a href="#" data-theme="a" data-icon="gear" data-mini="true" data-role="button">Settings</a>
+		<a href="#" data-theme="a" data-icon="back" data-mini="true" data-role="button">Sign Out</a>
+	</div>
+	<div data-role="header" data-theme="d" data-position="fixed" data-id="footer">
+	<a href="#" data-role="button" data-icon="delete" data-iconpos="notext" onClick="exitFromApp()">Exit</a> 
+	<h1>Parent's View</h1>
+	<a href="#popupPanel" data-rel="popup" data-transition="slide" data-position-to="window" data-role="button" data-icon="grid" data-iconpos="notext">Options</a>
+	<input type="search" name="search" id="search-paket" value="" data-id="footer" />	
+	</div>
+	
+	<div data-role="content" id="favorite" class="tab-content first">
+		<ul data-role="listview" data-split-icon="star" data-split-theme="d">
+        	<li>
+                <a href="#" data-ajax="false">
+                    <!--<img class="ui-li-thumb" src="img/kfc.png">-->
+                    <h3 class="ui-li-heading">Academic Calendar</h3>
+                    <p class="ui-li-desc">View Academic Calendar</p>
+                </a>
+			</li>
+            <li>
+                <a href="#" data-ajax="false">
+                    <!--<img class="ui-li-thumb" src="img/kfc.png">-->
+                    <h3 class="ui-li-heading">Assignment</h3>
+                    <p class="ui-li-desc">View Student's Assignment</p>
+                </a>
+			</li>
+             <li>
+                <a href="#" data-ajax="false">
+                    <!--<img class="ui-li-thumb" src="img/kfc.png">-->
+                    <h3 class="ui-li-heading">Attendance</h3>
+                    <p class="ui-li-desc">View Student's Attendance</p>
+                </a>
+			</li>
+            <li>
+                <a href="#" data-ajax="false">
+                    <!--<img class="ui-li-thumb" src="img/kfc.png">-->
+                    <h3 class="ui-li-heading">Finance</h3>
+                    <p class="ui-li-desc">View Finance Information</p>
+                </a>
+			</li>
+            <li>
+                <a href="#" data-ajax="false">
+                    <!--<img class="ui-li-thumb" src="img/kfc.png">-->
+                    <h3 class="ui-li-heading">Schedule</h3>
+                    <p class="ui-li-desc">View Schedule</p>
+                </a>
+			</li>
+			<li>
+                <a href="#" data-ajax="false">
+                    <!--<img class="ui-li-thumb" src="img/kfc.png">-->
+                    <h3 class="ui-li-heading">Score</h3>
+                    <p class="ui-li-desc">View Student's Score</p>
+                </a>
+			</li>
+            <li>
+                <a href="parent/profile.html" data-ajax="false">
+                    <!--<img class="ui-li-thumb" src="img/kfc.png">-->
+                    <h3 class="ui-li-heading">Student Profile</h3>
+                    <p class="ui-li-desc">View Student's Profile</p>
+                </a>
+			</li>
+            <li>
+                <a href="#" data-ajax="false">
+                    <!--<img class="ui-li-thumb" src="img/kfc.png">-->
+                    <h3 class="ui-li-heading">Library</h3>
+                    <p class="ui-li-desc">View Library Information</p>
+                </a>
+			</li>            
+            
+		</ul>
+	</div>
+
+</div>
+	 </body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+	<title>Welcome</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<script src="cordova.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="jquery.mobile-1.3.0.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/demo.css" />
+    <link rel="stylesheet" type="text/css" href="css/styleLogin.css" />
+    <script src="jquery.js"></script>
+    <script src="js/config.js"></script>
+    <script src="jquery.mobile-1.3.0.min.js"></script>
+<script>
+	
+	document.addEventListener("backbutton", backKeyDown, true); 
+    function onLoad(){ document.addEventListener("deviceready", onDeviceReady, true); }
+    function exitFromApp(){ navigator.app.exitApp(); }
+	function backKeyDown(){ e.preventDefault(); }
+	
+	/*function val(){
+		var user = document.getElementById("username").value;
+		var pass = document.getElementById("password").value;
+		alert(user+" "+pass);
+		$.ajax({
+				url: '?f=getAkses', //&id=1332440001
+				data : { u : user, p : pass}, //id was defined in js/config.js
+				beforeSend : function() {$.mobile.showPageLoadingMsg("a", "Loading....");},
+				complete   : function() {$.mobile.hidePageLoadingMsg();},
+				dataType: 'jsonp',
+				jsonp: 'jsoncallback',
+				success: function(data, status){
+					$.each(data, function(i,item){
+						alert(item.hasil);
+					});
+				},
+					error: function(tx){
+					alert(tx.responseStatus);
+					//alert(tx.responseText);
+				}
+		  });	
+	}*/
+	
+	function deviceReady() { 
+	
+		$.ajax({
+				url: domain+'?f=getAkses&u=1332440001&p=25022008', //&id=1332440001
+				//data : { u : "1332440001", p : "25022008"}, //id was defined in js/config.js
+				beforeSend : function() {$.mobile.showPageLoadingMsg("a", "Loading....");},
+				complete   : function() {$.mobile.hidePageLoadingMsg();},
+				dataType: 'jsonp',
+				jsonp: 'jsoncallback',
+				success: function(data, status){
+					$.each(data, function(i,item){
+						$(".key").append(item.hasil);
+					});
+				},
+					error: function(){
+					alert('Error Occur');
+				}
+		  });			
+	});
+</script>
+</head>
+<body onLoad="onLoad();">
+	<div id="loginPage" data-role="page">
+
+    <div class="codrops-top">
+        <a href="#" data-icon="delete" data-iconpos="notext" onClick="exitFromApp()">Exit</a><div id="header"><strong>School  Solutions  Mobile</strong></div>
+    </div>
+	
+    <header>
+        <h1>School <span> Solutions</span> Mobile</h1>
+    </header>
+    
+    <div data-role="content" id="login">    
+    	<div id="headerLogin">Log In</div>
+        <form id="loginForm">
+            <div data-role="fieldcontain" class="ui-hide-label">
+                <label for="username">Username:</label>
+                <input type="text" name="username" id="username" value="" placeholder="Username" />
+            </div>
+    
+            <div data-role="fieldcontain" class="ui-hide-label">
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password" value="" placeholder="Password" />
+            </div>
+    
+            <input type="submit" value="Login" id="submitButton" onClick="val()">
+        </form>
+        
+        <div class="key">
+        	ini bagian key
+        </div>
+        <!--<a href="regis.html" data-ajax="false"><button type="button">Registration</button></a>
+        <a href="student.html" data-ajax="false" style="text-decoration:none;"><button type="button">Go in</button></a>-->
+    </div>
+
+    <!--<div data-role="footer">
+        <h4><b>&copy; School Solution 2013</b></h4>
+    </div>-->
+
+</div>
+	 </body>
+</html>

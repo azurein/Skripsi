@@ -1,0 +1,36 @@
+[user] prospective student :
+- news & event
+- school history		[beres]
+- vision & mission
+- admission info
+- scholarship info
+- contact us
+- guideline
+
+[user] student :
+- view & edit profile		[view beres, edit belum]
+- view attendance
+- view academic calendar (?)
+- view schedule
+- view assignment
+- view score
+- lib info (?)
+- view course material
+- extend borrow book (?)
+- view exercise material
+- view finance info
+- forum
+
+[user] parent : 
+- view student prof
+- view academic calendar (?)
+- view assignment
+- view score
+- finance info
+- lib info
+- view atendance
+- view borrowed book
+- view schedule
+
+[user] guru :
+- absen melalui apps android

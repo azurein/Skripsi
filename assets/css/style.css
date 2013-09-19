@@ -1,0 +1,215 @@
+a{
+	text-decoration: none;
+}
+
+.inline{display:inline !important;}
+
+#popupPanel-popup {
+	right: 0 !important;
+	left: auto !important;
+	position: fixed;
+}
+
+#popupPanel {
+	width: 200px;
+	border: 1px solid #000;
+	border-right: none;
+	background: rgba(0,0,0,.5);
+	margin: -1px 0;
+}
+
+#popupPanel .ui-btn {
+	margin: 2em 15px;
+}
+
+.ui-icon-cart {
+	background-image: url("../images/cart.png");
+}
+
+/* jqm.navtab styles */
+.tab-content {
+    display:none;
+}
+.tab-content.first {
+    display:block;
+}
+
+.display{
+	width: 100%;
+	height: 375px;
+}
+
+.ui-dialog-contain {
+	margin: 4% auto 0px auto;
+}
+
+table {
+    color: black;
+    background: #fff;
+    border: 2px solid #b4b4b4;
+    font: bold 17px helvetica;
+    padding: 0;
+    margin-top:10px;
+    width: 100%;
+    -webkit-border-radius: 8px;
+	text-align: center;
+
+}
+
+table th {
+	border-bottom: 1px solid #b4b4b4;
+	border-right: 1px solid #b4b4b4;
+	padding: 10px 10px 10px 10px;
+	background: #CDCDCD;
+}
+     
+table tr td {
+    color: #666;
+    border-bottom: 1px solid #b4b4b4;
+    border-right: 1px solid #b4b4b4;
+    padding: 10px 10px 10px 10px;
+    background-image: -webkit-linear-gradient(top, #fdfdfd, #eee);
+}
+         
+table tr td:last-child, table tr th:last-child {
+    border-right: none;
+}
+
+table tr:last-child td {
+    border-bottom: none;
+}
+
+.count{
+	background: #CDCDCD;
+	color:#000000;	font-weight: bold;
+}
+
+/*tambahan*/
+
+
+input[icon="insert"], input[icon="insert"]:hover, button[icon="insert"], button[icon="insert"]:hover{
+    height:32px;
+    width:32px;
+    background:url('http://10.21.43.253/folderfile/iconaplikasi/addinsert.png')no-repeat;background-size:29px;
+    cursor:pointer;
+}
+input[icon="delete"], input[icon="delete"]:hover, button[icon="delete"], button[icon="delete"]:hover{
+    height:32px;
+    width:32px;
+    background:url('http://10.21.43.253/folderfile/iconaplikasi/delete.png')no-repeat;background-size:29px;
+    cursor:pointer;
+}
+input[icon="download"], input[icon="download"]:hover, button[icon="download"], button[icon="download"]:hover{
+    height:32px;
+    width:32px;
+    background:url('http://10.21.43.253/folderfile/iconaplikasi/download.png')no-repeat;background-size:29px;
+    cursor:pointer;
+}
+input[icon="update"], input[icon="update"]:hover, button[icon="update"], button[icon="update"]:hover{
+    height:32px;
+    width:32px;
+    background:url('http://10.21.43.253/folderfile/iconaplikasi/edit.png')no-repeat;background-size:29px;
+    cursor:pointer;
+}
+input[icon="false"], input[icon="false"]:hover, button[icon="false"], button[icon="false"]:hover{
+    height:32px;
+    width:32px;
+    background:url('http://10.21.43.253/folderfile/iconaplikasi/false.png')no-repeat;background-size:29px;
+    cursor:pointer;
+}
+input[icon="lock"], input[icon="lock"]:hover{
+    height:32px;
+    width:32px;
+    background:url('http://10.21.43.253/folderfile/iconaplikasi/lock.png')no-repeat;background-size:29px;
+    cursor:pointer;
+}
+input[icon="save"], input[icon="save"]:hover{
+    height:32px;
+    width:32px;
+    background:url('http://10.21.43.253/folderfile/iconaplikasi/save.png')no-repeat;background-size:29px;
+    cursor:pointer;
+}
+input[icon="search"], input[icon="search"]:hover{
+    height:32px;
+    width:32px;
+    background:url('http://10.21.43.253/folderfile/iconaplikasi/search.png')no-repeat;background-size:29px;
+    cursor:pointer;
+}
+button[icon="search"], button[icon="search"]:hover{
+    height:32px;
+    width:32px;
+    background:url('http://10.21.43.253/folderfile/iconaplikasi/search.png')no-repeat;background-size:29px;
+    cursor:pointer;
+}
+input[icon="true"], input[icon="true"]:hover{
+    height:32px;
+    width:32px;
+    background:url('http://10.21.43.253/folderfile/iconaplikasi/true.png')no-repeat;background-size:29px;
+    cursor:pointer;
+}
+input[icon="unlock"], input[icon="unlock"]:hover{
+    height:32px;
+    width:32px;
+    background:url('http://10.21.43.253/folderfile/iconaplikasi/save.png')no-repeat;background-size:29px;
+    cursor:pointer;
+}
+input[icon="upload"], input[icon="upload"]:hover{
+    height:32px;
+    width:32px;
+    background:url('http://10.21.43.253/folderfile/iconaplikasi/upload.png')no-repeat;background-size:29px;
+    cursor:pointer;
+}
+input[icon="reset"], input[icon="reset"]:hover{
+    height:32px;;position:absolute;margin-top:0px;
+    width:32px;
+    background:url('http://10.21.43.253/folderfile/iconaplikasi/reset.png')no-repeat;background-size:29px;
+    cursor:pointer;
+}
+button[icon="reset"], button[icon="reset"]:hover{
+    height:32px;position:absolute;margin-top:0px;
+    width:32px;
+    background:url('http://10.21.43.253/folderfile/iconaplikasi/reset.png')no-repeat;background-size:29px;
+    cursor:pointer;
+}
+input[icon="detail"], input[icon="detail"]:hover{
+    height:32px;
+    width:32px;
+    background:url('http://10.21.43.253/folderfile/iconaplikasi/detail.png')no-repeat;background-size:32px;
+    cursor:pointer;
+}
+input[icon="pdf"], input[icon="pdf"]:hover{
+    height:32px;
+    width:32px;
+    background:url('http://10.21.43.253/folderfile/iconaplikasi/pdf.png')no-repeat;background-size:32px;
+    cursor:pointer;
+}
+input[icon="excel"], input[icon="excel"]:hover{
+    height:32px;
+    width:32px;
+    background:url('http://10.21.43.253/folderfile/iconaplikasi/excel.png')no-repeat;background-size:32px;
+    cursor:pointer;
+}
+input[icon="allocation"], input[icon="allocation"]:hover, button[icon="allocation"], button[icon="allocation"]:hover{
+    height:32px;;position:absolute;margin-top:0px;
+    width:32px;
+    background:url('http://10.21.43.253/folderfile/iconaplikasi/allocation.png')no-repeat;background-size:29px;
+    cursor:pointer;
+}
+input[icon="kembali"], input[icon="kembali"]:hover, button[icon="kembali"], button[icon="kembali"]:hover{
+    height:32px;position:absolute;margin-top:0px;
+    width:32px;
+    background:url('http://10.21.43.253/folderfile/iconaplikasi/back.png')no-repeat;background-size:29px;
+    cursor:pointer;
+}
+input[icon="Down"], input[icon="Down"]:hover, button[icon="Down"], button[icon="Down"]:hover{
+    height:32px;;margin-top:0px;
+    width:32px;
+    background:url('http://10.21.43.253/folderfile/iconaplikasi/down.png')no-repeat;background-size:29px;
+    cursor:pointer;
+}
+input[icon="Up"], input[icon="Up"]:hover, button[icon="Up"], button[icon="Up"]:hover{
+    height:32px;margin-top:0px;
+    width:32px;
+    background:url('http://10.21.43.253/folderfile/iconaplikasi/up.png')no-repeat;background-size:29px;
+    cursor:pointer;
+}
